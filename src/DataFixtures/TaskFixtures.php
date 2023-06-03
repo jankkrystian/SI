@@ -6,17 +6,35 @@
 namespace App\DataFixtures;
 
 use App\Entity\Task;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
+use Faker\Factory;
+use Faker\Generator;
 
 /**
  * Class TaskFixtures.
  */
-class TaskFixtures extends AbstractBaseFixtures
+class TaskFixtures extends Fixture
 {
     /**
-     * Load data.
+     * Faker.
      */
-    public function loadData(): void
+    protected Generator $faker;
+
+    /**
+     * Persistence object manager.
+     */
+    protected ObjectManager $manager;
+
+    /**
+     * Load.
+     *
+     * @param ObjectManager $manager Persistence object manager
+     */
+    public function load(ObjectManager $manager): void
     {
+        $this->faker = Factory::create();
+
         for ($i = 0; $i < 10; ++$i) {
             $task = new Task();
             $task->setTitle($this->faker->sentence);
@@ -26,9 +44,9 @@ class TaskFixtures extends AbstractBaseFixtures
             $task->setUpdatedAt(
                 \DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days'))
             );
-            $this->manager->persist($task);
+            $manager->persist($task);
         }
 
-        $this->manager->flush();
+        $manager->flush();
     }
 }
