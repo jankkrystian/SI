@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'Home'|trans }}
+{% endblock %}
+    {% block stylesheets %}
+        <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+                rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                           href="https://wierzba.wzks.uj.edu.pl/~21_goldys/todo-app/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/todo-app/task">Książki</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Jakaś podstrona
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center">
+        <div class="row align-items-end">
+            <h1>{{ 'Strona główna (robocza)'|trans }}</h1>
+            <div class="col">
+                <p>Główna strona, będzie jakieś info o wypożyczalni, a w podstronach przeróżności typu wszystkie
+                    dostępne książki i informacje o nich. Obecnie jako zapychacz znajduje się tutaj tekst mojej
+                    ulubionej piosenki.</p>
+                <p>We're no strangers to love
+                    You know the rules and so do I (do I)
+                    A full commitment's what I'm thinking of
+                    You wouldn't get this from any other guy
+                    I just wanna tell you how I'm feeling
+                    Gotta make you understand
+                    Never gonna give you up
+                    Never gonna let you down
+                    Never gonna run around and desert you
+                    Never gonna make you cry
+                    Never gonna say goodbye
+                    Never gonna tell a lie and hurt you
+                    We've known each other for so long
+                    Your heart's been aching, but you're too shy to say it (say it)
+                    Inside, we both know what's been going on (going on)
+                    We know the game and we're gonna play it
+                    And if you ask me how I'm feeling
+                    Don't tell me you're too blind to see
+                    Never gonna give you up
+                    Never gonna let you down
+                    Never gonna run around and desert you
+                    Never gonna make you cry
+                    Never gonna say goodbye
+                    Never gonna tell a lie and hurt you
+                    Never gonna give you up
+                    Never gonna let you down
+                    Never gonna run around and desert you
+                    Never gonna make you cry
+                    Never gonna say goodbye
+                    Never gonna tell a lie and hurt you
+                    We've known each other for so long
+                    Your heart's been aching, but you're too shy to say it (to say it)
+                    Inside, we both know what's been going on (going on)
+                    We know the game and we're gonna play it
+                    I just wanna tell you how I'm feeling
+                    Gotta make you understand
+                    Never gonna give you up
+                    Never gonna let you down
+                    Never gonna run around and desert you
+                    Never gonna make you cry
+                    Never gonna say goodbye
+                    Never gonna tell a lie and hurt you
+                    Never gonna give you up
+                    Never gonna let you down
+                    Never gonna run around and desert you
+                    Never gonna make you cry
+                    Never gonna say goodbye
+                    Never gonna tell a lie and hurt you
+                    Never gonna give you up
+                    Never gonna let you down
+                    Never gonna run around and desert you
+                    Never gonna make you cry
+                    Never gonna say goodbye
+                    Never gonna tell a lie and hurt you</p>
+                <iframe src="https://giphy.com/embed/5kq0GCjHA8Rwc" width="480" height="360" frameBorder="0"
+                        class="giphy-embed" allowFullScreen></iframe>
+                <p><a href="https://giphy.com/gifs/throwback-rick-roll-astley-5kq0GCjHA8Rwc">via GIPHY</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,1 +1,5 @@
-
+index:
+  path: /home
+  controller: App\Controller\HomeController::home_index
+  defaults:
+    template: 'index.html.twig'
