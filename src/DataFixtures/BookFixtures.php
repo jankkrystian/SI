@@ -5,8 +5,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Task;
-use DateTimeImmutable;
+use App\Entity\Book;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -15,7 +14,7 @@ use Faker\Generator;
 /**
  * Class TaskFixtures.
  */
-class TaskFixtures extends Fixture
+class BookFixtures extends Fixture
 {
     /**
      * Faker.
@@ -41,15 +40,11 @@ class TaskFixtures extends Fixture
         $this->faker = Factory::create();
 
         for ($i = 0; $i < 10; ++$i) {
-            $task = new Task();
-            $task->setTitle($this->faker->sentence);
-            $task->setCreatedAt(
-                DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days'))
-            );
-            $task->setUpdatedAt(
-                DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days'))
-            );
-            $manager->persist($task);
+            $book = new Book();
+            $book->setTitle($this->faker->sentence);
+            $book->setAuthor($this->faker->sentence);
+            $book->setPublisher($this->faker->sentence);
+            $manager->persist($book);
         }
 
         $manager->flush();
