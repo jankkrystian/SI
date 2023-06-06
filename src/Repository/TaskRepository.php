@@ -16,7 +16,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class TaskRepository extends ServiceEntityRepository
 {
-    public const PAGINATOR_ITEMS_PER_PAGE = 5;
+    public const PAGINATOR_ITEMS_PER_PAGE = 4;
 
     public function __construct(ManagerRegistry $registry)
     {
