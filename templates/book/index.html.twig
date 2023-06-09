@@ -51,6 +51,7 @@
                 <th>{{ knp_pagination_sortable(pagination, 'Title'|trans, 'book.title') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'Author'|trans, 'book.author') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'Publisher'|trans, 'book.publisher') }}</th>
+                <th>{{ 'label.category'|trans }}</th>
                 <th>{{ 'label.actions'|trans }}</th>
             </tr>
             </thead>
@@ -61,6 +62,7 @@
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
                     <td>{{ book.publisher }}</td>
+                    <td>{{ book.category.name }}</td>
                     <td>
                         <a href="{{ url('book_show', {id: book.id}) }}" title="{{ 'action.show'|trans }}">
                             {{ 'action.show'|trans }}
